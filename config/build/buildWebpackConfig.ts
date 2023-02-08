@@ -1,16 +1,16 @@
 import {BuildOptions} from "./types/config";
 import webpack from "webpack";
 import path from "path";
-import {buildPlugins} from "./buildPlagins";
+import {buildPlugins} from "./buildPlugins";
 import {buildLoaders} from "./buildLoaders";
-import {buildResolvers} from "./builsResolvers";
+import {buildResolvers} from "./buildResolvers";
 import {buildDevServer} from "./buildDevServer";
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-    const { mode, paths, isDev } = options;
+    const {paths, mode, isDev} = options;
 
     return {
-        mode,
+        mode: mode,
         entry: paths.entry,
         output: {
             filename: "[name].[contenthash].js",
@@ -26,3 +26,9 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         devServer: isDev ? buildDevServer(options) : undefined,
     }
 }
+
+
+
+
+
+
