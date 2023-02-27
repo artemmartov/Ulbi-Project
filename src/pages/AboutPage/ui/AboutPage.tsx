@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const Counter = () => {
+const AboutPage = () => {
     return (
         <div>
-            
+            ABOUT PAGE
         </div>
     );
 };
 
-export default Counter;
+export default AboutPage;
