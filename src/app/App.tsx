@@ -6,6 +6,7 @@ import {MainPage} from "pages/MainPage";
 import './styles/index.scss'
 import {classNames} from "shared/lib/classNames/classNames";
 import {useTheme} from "app/providers/ThemeProvider";
+import {AppRouter} from "app/providers/router";
 
 
 
@@ -17,12 +18,7 @@ const App = () => {
             <button onClick={toggleTheme}>TOGGLE</button>
             <Link to={'/main'}>Главная</Link>
             <Link to={'/about'}>О сайте</Link>
-            <Suspense fallback={<div>loading</div>}>
-                <Routes>
-                    <Route path='/about' element={<AboutPage />}/>
-                    <Route path='/main' element={<MainPage />}/>
-                </Routes>
-            </Suspense>
+            <AppRouter />b
         </div>
     );
 };
